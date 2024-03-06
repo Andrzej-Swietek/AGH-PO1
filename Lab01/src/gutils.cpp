@@ -4,7 +4,8 @@
 
 void gutils::handleGameObject(GameObject* gameobject)
 {
-    std::cout << "Rendering" << boost::core::demangle(typeid(*gameobject).name()) << std::endl;
+    gameobject->AddToScene();
+    std::cout << "Rendering " << boost::core::demangle(typeid(*gameobject).name()) << std::endl;
     if( PlayerCharacter* player_character = dynamic_cast<PlayerCharacter*>(gameobject) ) 
     {
         player_character -> attack();
@@ -13,6 +14,7 @@ void gutils::handleGameObject(GameObject* gameobject)
 
 void gutils::handleRenderable(Renderable* renderable)
 {
+    renderable->AddToScene();
     std::cout << "Drawing " << boost::core::demangle(typeid(*renderable).name()) << std::endl;
      if( PlayerCharacter* player_character = dynamic_cast<PlayerCharacter*>(renderable) ) 
     {
