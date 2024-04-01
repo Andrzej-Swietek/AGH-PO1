@@ -64,3 +64,7 @@ bool Ksiazka::operator<=(const Ksiazka &rhs) const {
 bool Ksiazka::operator>=(const Ksiazka &rhs) const {
     return !(*this < rhs);
 }
+
+std::string Ksiazka::getTitle() {
+    return this->title;
+}

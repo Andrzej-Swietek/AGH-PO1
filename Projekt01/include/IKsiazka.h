@@ -18,12 +18,18 @@ public:
 
     /**
      * @brief Method responsible for presenting important information about given book
-     * @virtual
-     * Pure virtual function
-     *
+     * @virtual - Pure virtual function
      * @return no return
      */
     virtual void wyswietlInformacje() = 0;
+
+
+    /**
+     * @brief Method responsible for retrieving title of given book
+     * @virtual - pure virtual function
+     * @return title field
+     */
+    virtual std::string getTitle() = 0;
 
 };
 

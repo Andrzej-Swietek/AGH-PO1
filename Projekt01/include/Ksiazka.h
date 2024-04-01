@@ -35,6 +35,8 @@ public:
     virtual void wyswietlInformacje() override;
 
 
+    virtual std::string getTitle() override;
+
 
     /// ======================= Getters & Setter =======================
 
