@@ -11,6 +11,8 @@
 
 class Ksiazka : public IKsiazka {
 public:
+/// ================== Constructors & Destructors ==================
+
     /**
      * @brief Ksiazka main constructor
      * @param[in] title - text title of the book
@@ -23,7 +25,16 @@ public:
     Ksiazka(std::string& title, std::string& author,  int id, std::string& genre, int shelf_id );
 
 
+    ///
+
+    /**
+     *  @brief Method Responsible for displaying vital information about the book
+     *  @override Method overriding method from IKsiazka class
+     *  @return no returns
+     */
     virtual void wyswietlInformacje() override;
+
+
 
     /// ======================= Getters & Setter =======================
 
@@ -33,6 +44,7 @@ public:
      */
     int getShelfId() const;
 
+
     /**
      * @brief Setter Method responsible for setting new value for this book's shelf id
      * @param newId - new shelf identifier integer value
@@ -40,9 +52,64 @@ public:
      */
     void setShelfId(int newId);
 
-    /// ====================== Operator Overloads ======================
 
+
+    /// ====================== Operator Overloads ======================
+    /**
+     * @brief Out stream operator overload
+     * @param os - reference to output stream object from standard library
+     * @param ksiazka - const reference to Ksiazka class obeject that is to be printed
+     * @return
+     */
     friend std::ostream &operator<<(std::ostream &os, const Ksiazka &ksiazka);
+
+
+    /**
+     * Equality operator overload
+     * @param rhs - right hand side Ksiazka const reference
+     * @return true if objects have the same fields, false otherwise
+     */
+    bool operator==(const Ksiazka &rhs) const;
+
+
+    /**
+     * Inequality operator overload
+     * @param rhs - right hand side Ksiazka const reference
+     * @return true if objects have different fields, false otherwise
+     */
+    bool operator!=(const Ksiazka &rhs) const;
+
+
+    /**
+     * @brief overload of less operator
+     * @param rhs - right hand side Ksiazka const reference
+     * @return true if shelf id is smaller
+     */
+    bool operator<(const Ksiazka &rhs) const;
+
+
+    /**
+     * @brief overload of greater operator
+     * @param rhs - right hand side Ksiazka const reference
+     * @return true if shelf id is bigger
+     */
+    bool operator>(const Ksiazka &rhs) const;
+
+
+    /**
+     * @brief overload of less or equal operator
+     * @param rhs - right hand side Ksiazka const reference
+     * @return true if shelf id is smaller or equal
+     */
+    bool operator<=(const Ksiazka &rhs) const;
+
+
+    /**
+     * @brief overload of greater or equal operator
+     * @param rhs - right hand side Ksiazka const reference
+     * @return true if shelf id is greater or equal
+     */
+    bool operator>=(const Ksiazka &rhs) const;
 
 private:
     int id;
