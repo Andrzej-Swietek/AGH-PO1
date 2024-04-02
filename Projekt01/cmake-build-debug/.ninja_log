@@ -14,3 +14,17 @@
 1	190	1712075743581489343	CMakeFiles/Point.dir/src/Komiks.cpp.o	f5aaa0844e9199a8
 1	223	1712075743613489258	CMakeFiles/Point.dir/main.cpp.o	ab9a93af3da62774
 223	272	1712075743661489130	Point	ba91e34482c7ce0f
+1	217	1712078867965342653	CMakeFiles/Point.dir/src/Ksiazka.cpp.o	e02595f842902d9
+1	247	1712078867997342603	CMakeFiles/Point.dir/src/Czasopismo.cpp.o	cb706a46f978e0be
+1	258	1712078868009342584	CMakeFiles/Point.dir/src/IKsiazka.cpp.o	eadd153adee6310
+1	310	1712078868061342504	CMakeFiles/Point.dir/src/Komiks.cpp.o	f5aaa0844e9199a8
+1	335	1712078868085342466	CMakeFiles/Point.dir/main.cpp.o	ab9a93af3da62774
+1	350	1712078868101342441	CMakeFiles/Point.dir/src/Library.cpp.o	4af99f421eaa5f0f
+1	353	1712078868101342441	CMakeFiles/Point.dir/src/User.cpp.o	acb0605013200fbd
+353	403	1712078868153342360	Point	ba91e34482c7ce0f
+0	219	1712078881921320866	CMakeFiles/Point.dir/main.cpp.o	ab9a93af3da62774
+219	263	1712078881965320796	Point	ba91e34482c7ce0f
+0	209	1712078994893142391	CMakeFiles/Point.dir/main.cpp.o	ab9a93af3da62774
+0	237	1712078994921142346	CMakeFiles/Point.dir/src/Library.cpp.o	4af99f421eaa5f0f
+0	238	1712078994921142346	CMakeFiles/Point.dir/src/User.cpp.o	acb0605013200fbd
+238	287	1712078994969142270	Point	ba91e34482c7ce0f

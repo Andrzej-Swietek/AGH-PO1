@@ -12,6 +12,7 @@
 
 class IKsiazka {
 public:
+    friend class Library;
     /// ================== Constructors & Destructors ==================
 
     /**
@@ -98,6 +99,29 @@ public:
      */
     void setShelfId(int newId);
 
+
+    /**
+     * @brief Getter Method responsible for setting new value for this book's available flag
+     * @param newId - new boolean value for available flag
+     * @return - value if book can be acquired
+     */
+    bool getAvailability() const;
+
+
+    /**
+     * @brief Setter Method responsible for setting new value for this book's available flag
+     * @param newId - new boolean value for available flag
+     * @return no return
+     */
+    void setAvailability(bool newValue);
+
+
+    /**
+     * @brief Automatically toggles available flag
+     * @param newId - new boolean value for available flag
+     * @return no return
+     */
+    void toggleAvailability();
 
 
     /// ====================== Operator Overloads ======================

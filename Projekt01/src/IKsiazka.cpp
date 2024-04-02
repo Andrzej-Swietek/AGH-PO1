@@ -61,6 +61,21 @@ void IKsiazka::setShelfId(int newId) {
 }
 
 
+void IKsiazka::setAvailability(bool newValue) {
+    this->available = newValue;
+}
+
+
+void IKsiazka::toggleAvailability() {
+    this->available = !this->available;
+}
+
+
+bool IKsiazka::getAvailability() const {
+    return this->available;
+}
+
+
 /// ====================== Operator Overloads ======================
 
 std::ostream &operator<<(std::ostream &os, const IKsiazka &ksiazka) {
@@ -137,3 +152,4 @@ IKsiazka& IKsiazka::operator=(IKsiazka&& other) noexcept {
     }
     return *this;
 }
+
