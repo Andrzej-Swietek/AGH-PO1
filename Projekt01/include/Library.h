@@ -13,6 +13,7 @@
 
 #include "IKsiazka.h"
 #include "User.h"
+#include "LibraryIterator.h"
 
 class Library {
 public:
@@ -101,6 +102,12 @@ public:
      * @return No return value.
      */
     void displayBorrowedBooks() const;
+
+    /**
+     * @brief Method allowing to add multiple books at once
+     * @param collection - vector of new IKsiazka derived objects' pointers
+     */
+    void addCollection(const std::vector<IKsiazka*>& collection);
 
 
     ///  ======================= Aggregations  ========================
@@ -198,6 +205,16 @@ public:
      * @return Pointer to the book object if found, nullptr otherwise.
      */
     IKsiazka* operator[](int id) const;
+
+
+    /// ====================== Operator Overloads ======================
+
+    /**
+     * Method allowing user to iterate over library collection
+     * Adhering to Iterator Design Pattern
+     * @return Iterator object pointer
+     */
+    LibraryIterator* createIterator();
 
 private:
     std::vector<IKsiazka*> books;

@@ -4,6 +4,8 @@
 
 #include "Library.h"
 
+///  ======================= Constructors  ========================
+
 Library::Library() = default;
 
 
@@ -14,12 +16,15 @@ Library::Library(const std::vector<IKsiazka*>& booksVector)
 
 Library::~Library()
 {
-    for (IKsiazka *ksiazka : books)
+    for (IKsiazka *book : books)
     {
-        delete ksiazka;
+        delete book;
     }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Normal Methods
 
 void Library::addMaterial(IKsiazka *material)
 {
@@ -102,6 +107,13 @@ void Library::moveBookToShelf(std::string title, int newShelfId) {
 }
 
 
+void Library::addCollection(const std::vector<IKsiazka*>& collection) {
+    for (IKsiazka* book : collection) {
+        addMaterial(book);
+    }
+}
+
+
 void Library::swapBooks(std::string title1, std::string title2) {
     IKsiazka* book1 = nullptr;
     IKsiazka* book2 = nullptr;
@@ -135,6 +147,9 @@ void Library::displayBorrowedBooks() const {
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///  ======================= Sort Functions  ========================
 
 std::vector<IKsiazka*> Library::sortByTitle() const {
     std::vector<IKsiazka*> sortedBooks = books;
@@ -172,6 +187,7 @@ IKsiazka* Library::operator[](int id) const {
     return nullptr;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///  ======================= Aggregations  ========================
 
@@ -258,4 +274,10 @@ std::vector<IKsiazka*> Library::searchByGenre(const std::string& genre) const {
         }
     }
     return result;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LibraryIterator* Library::createIterator() {
+    return new LibraryIterator(this->books);
 }
