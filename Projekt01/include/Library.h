@@ -147,6 +147,40 @@ public:
      */
     std::unordered_map<std::string, std::vector<IKsiazka*>> groupBy(const std::string& groupCriteria) const;
 
+
+
+
+
+    ///  ========================= Searches =========================
+
+    /**
+     * @brief Search for books in the library by title.
+     *
+     * @param title The title of the book to search for.
+     * @return A vector of pointers to books with the specified title.
+     */
+    std::vector<IKsiazka*> searchByTitle(const std::string& title) const;
+
+
+    /**
+     * @brief Search for books in the library by author.
+     *
+     * @param author The author of the book to search for.
+     * @return A vector of pointers to books by the specified author.
+     */
+    std::vector<IKsiazka*> searchByAuthor(const std::string& author) const;
+
+
+    /**
+     * @brief Search for books in the library by genre.
+     *
+     * @param genre The genre of the book to search for.
+     * @return A vector of pointers to books with the specified genre.
+     */
+    std::vector<IKsiazka*> searchByGenre(const std::string& genre) const;
+
+
+
     ///  ====================== Operator Overloads ======================
 
 

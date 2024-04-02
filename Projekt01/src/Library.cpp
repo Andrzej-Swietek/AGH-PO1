@@ -224,3 +224,38 @@ std::unordered_map<std::string, std::vector<IKsiazka*>> Library::groupBy(const s
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///  ========================= Searches =========================
+
+// Search for books by title
+std::vector<IKsiazka*> Library::searchByTitle(const std::string& title) const {
+    std::vector<IKsiazka*> result;
+    for (IKsiazka* ksiazka : books) {
+        if (ksiazka->getTitle() == title) {
+            result.push_back(ksiazka);
+        }
+    }
+    return result;
+}
+
+// Search for books by author
+std::vector<IKsiazka*> Library::searchByAuthor(const std::string& author) const {
+    std::vector<IKsiazka*> result;
+    for (IKsiazka* ksiazka : books) {
+        if (ksiazka->author == author) {
+            result.push_back(ksiazka);
+        }
+    }
+    return result;
+}
+
+// Search for books by genre
+std::vector<IKsiazka*> Library::searchByGenre(const std::string& genre) const {
+    std::vector<IKsiazka*> result;
+    for (IKsiazka* ksiazka : books) {
+        if (ksiazka->genre == genre) {
+            result.push_back(ksiazka);
+        }
+    }
+    return result;
+}
