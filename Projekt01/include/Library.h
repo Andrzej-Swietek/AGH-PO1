@@ -4,15 +4,31 @@
 
 #ifndef POINT_LIBRARY_H
 #define POINT_LIBRARY_H
-#include<iostream>
+#include <iostream>
 #include <string>
 #include <vector>
+#include <functional>
+#include <algorithm>
+#include <unordered_map>
 
 #include "IKsiazka.h"
 #include "User.h"
 
 class Library {
 public:
+
+    /**
+     * @brief Default constructor
+     * @return no return
+     */
+    Library();
+
+    /**
+     * @brief Constructor that initializes the library with a vector of IKsiazka pointers.
+     * @param booksVector Vector of IKsiazka pointers representing the initial books in the library.
+     */
+    Library(const std::vector<IKsiazka*>& booksVector);
+
     /**
      * @brief Library Object destructor
      * @return no return
@@ -52,8 +68,100 @@ public:
      */
     void displayAllBooks() const;
 
+
+
+    /**
+     * @brief Method allowing to change the shelf position for books in the library.
+     * @param title Title of the book to be moved.
+     * @param newShelfId New position on the shelf.
+     * @return No return value.
+     */
+    void moveBookToShelf(std::string title, int newShelfId);
+
+
+    /**
+     * @brief Method for swapping positions of two books.
+     * @param title1 Title of the first book to be swapped.
+     * @param title2 Title of the second book to be swapped.
+     * @return No return value.
+     */
+    void swapBooks(std::string title1, std::string title2);
+
+    /**
+     * @brief Method for displaying (just) all borrowed books.
+     * @return No return value.
+     */
+    void displayBorrowedBooks() const;
+
+
+    ///  ======================= Aggregations  ========================
+
+    /**
+     * @brief Method for sorting all books by title.
+     * @return A copy of the vector containing sorted books.
+     */
+    std::vector<IKsiazka *> sortByTitle() const;
+
+
+    /**
+     * @brief Method for sorting all books by ID.
+     * @return A copy of the vector containing sorted books.
+     */
+    std::vector<IKsiazka *> sortById() const;
+
+
+    /**
+     * @brief Method for grouping books by genre.
+     * @return An unordered map where keys are genres and values are vectors of books belonging to each genre.
+     */
+    std::unordered_map<std::string, std::vector<IKsiazka*>> booksByGenre() const;
+
+
+    /**
+     * @brief Method for grouping books by author.
+     * @return An unordered map where keys are authors and values are vectors of books written by each author.
+     */
+    std::unordered_map<std::string, std::vector<IKsiazka*>> booksByAuthor() const;
+
+
+    /**
+     * @brief Method for grouping books by availability.
+     * @return An unordered map where keys are "available" or "unavailable" and values are vectors of books in each category.
+     */
+    std::unordered_map<std::string, std::vector<IKsiazka*>> booksByAvailability() const;
+
+
+    /**
+     * @brief Method for grouping books according to a provided group criteria.
+     * @param groupCriteria The criteria based on which books will be grouped. Possible values: "author", "genre", or "availability".
+     * @return An unordered map representing the grouping, where keys depend on the group criteria.
+     */
+    std::unordered_map<std::string, std::vector<IKsiazka*>> groupBy(const std::string& groupCriteria) const;
+
+    ///  ====================== Operator Overloads ======================
+
+
+    /**
+     * @brief Overloaded subscript operator to access a book by its title.
+     * @param title Title of the book to access.
+     * @return Pointer to the book object if found, nullptr otherwise.
+     */
+    IKsiazka* operator[](const std::string title) const;
+
+
+    /**
+     * @brief Overloaded subscript operator to access a book by its ID.
+     * @param id ID of the book to access.
+     * @return Pointer to the book object if found, nullptr otherwise.
+     */
+    IKsiazka* operator[](int id) const;
+
 private:
     std::vector<IKsiazka*> books;
+
+    std::unordered_map<std::string, std::vector<IKsiazka*>> groupBy(std::function<std::string(const IKsiazka*)> groupFunction) const;
+
+
 };
 
 #endif //POINT_LIBRARY_H
