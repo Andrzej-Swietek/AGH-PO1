@@ -27,6 +27,20 @@ void Library::addMaterial(IKsiazka *material)
 }
 
 
+bool Library::removeMaterial(const std::string& title) {
+    auto it = std::find_if(books.begin(), books.end(), [&title](const IKsiazka* book)->bool {
+        return book->title == title;
+    });
+
+    if (it != books.end()) {
+        delete *it;
+        books.erase(it);
+        return true;
+    }
+
+    return false;
+}
+
 
 void Library::borrowBook(std::string title, User &user)
 {

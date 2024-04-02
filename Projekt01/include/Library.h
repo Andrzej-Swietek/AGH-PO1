@@ -42,6 +42,15 @@ public:
      */
     void addMaterial(IKsiazka *material);
 
+
+    /**
+     * @brief Method for removing a book from the library.
+     * @param title Title of the book to be removed.
+     * @return True if the book was successfully removed, false otherwise (e.g., if the book was not found).
+     */
+    bool removeMaterial(const std::string& title);
+
+
     /**
      * @brief Method responsible for allowing user to borrow a book from library
      * Function modifies both user and library object
