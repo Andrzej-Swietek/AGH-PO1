@@ -65,6 +65,14 @@ build CMakeFiles/Point.dir/src/Czasopismo.cpp.o: CXX_COMPILER__Point_unscanned_D
   OBJECT_DIR = CMakeFiles/Point.dir
   OBJECT_FILE_DIR = CMakeFiles/Point.dir/src
 
+build CMakeFiles/Point.dir/src/IKsiazka.cpp.o: CXX_COMPILER__Point_unscanned_Debug /home/andrzej/Documents/AGH-PO1/Projekt01/src/IKsiazka.cpp || cmake_object_order_depends_target_Point
+  DEFINES = -DPROJECTPATH=\"/home/andrzej/Documents/AGH-PO1/Projekt01\"
+  DEP_FILE = CMakeFiles/Point.dir/src/IKsiazka.cpp.o.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I/home/andrzej/Documents/AGH-PO1/Projekt01/include
+  OBJECT_DIR = CMakeFiles/Point.dir
+  OBJECT_FILE_DIR = CMakeFiles/Point.dir/src
+
 build CMakeFiles/Point.dir/src/Komiks.cpp.o: CXX_COMPILER__Point_unscanned_Debug /home/andrzej/Documents/AGH-PO1/Projekt01/src/Komiks.cpp || cmake_object_order_depends_target_Point
   DEFINES = -DPROJECTPATH=\"/home/andrzej/Documents/AGH-PO1/Projekt01\"
   DEP_FILE = CMakeFiles/Point.dir/src/Komiks.cpp.o.d
@@ -76,6 +84,14 @@ build CMakeFiles/Point.dir/src/Komiks.cpp.o: CXX_COMPILER__Point_unscanned_Debug
 build CMakeFiles/Point.dir/src/Ksiazka.cpp.o: CXX_COMPILER__Point_unscanned_Debug /home/andrzej/Documents/AGH-PO1/Projekt01/src/Ksiazka.cpp || cmake_object_order_depends_target_Point
   DEFINES = -DPROJECTPATH=\"/home/andrzej/Documents/AGH-PO1/Projekt01\"
   DEP_FILE = CMakeFiles/Point.dir/src/Ksiazka.cpp.o.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I/home/andrzej/Documents/AGH-PO1/Projekt01/include
+  OBJECT_DIR = CMakeFiles/Point.dir
+  OBJECT_FILE_DIR = CMakeFiles/Point.dir/src
+
+build CMakeFiles/Point.dir/src/Library.cpp.o: CXX_COMPILER__Point_unscanned_Debug /home/andrzej/Documents/AGH-PO1/Projekt01/src/Library.cpp || cmake_object_order_depends_target_Point
+  DEFINES = -DPROJECTPATH=\"/home/andrzej/Documents/AGH-PO1/Projekt01\"
+  DEP_FILE = CMakeFiles/Point.dir/src/Library.cpp.o.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   INCLUDES = -I/home/andrzej/Documents/AGH-PO1/Projekt01/include
   OBJECT_DIR = CMakeFiles/Point.dir
@@ -97,7 +113,7 @@ build CMakeFiles/Point.dir/src/User.cpp.o: CXX_COMPILER__Point_unscanned_Debug /
 #############################################
 # Link the executable Point
 
-build Point: CXX_EXECUTABLE_LINKER__Point_Debug CMakeFiles/Point.dir/main.cpp.o CMakeFiles/Point.dir/src/Czasopismo.cpp.o CMakeFiles/Point.dir/src/Komiks.cpp.o CMakeFiles/Point.dir/src/Ksiazka.cpp.o CMakeFiles/Point.dir/src/User.cpp.o
+build Point: CXX_EXECUTABLE_LINKER__Point_Debug CMakeFiles/Point.dir/main.cpp.o CMakeFiles/Point.dir/src/Czasopismo.cpp.o CMakeFiles/Point.dir/src/IKsiazka.cpp.o CMakeFiles/Point.dir/src/Komiks.cpp.o CMakeFiles/Point.dir/src/Ksiazka.cpp.o CMakeFiles/Point.dir/src/Library.cpp.o CMakeFiles/Point.dir/src/User.cpp.o
   FLAGS = -g
   LINK_FLAGS = -rdynamic
   OBJECT_DIR = CMakeFiles/Point.dir

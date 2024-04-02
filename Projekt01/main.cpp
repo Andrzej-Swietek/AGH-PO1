@@ -7,6 +7,7 @@
 
 int main() {
     std::vector<IKsiazka*> ksiazki;
+
     // tytuł, autor, id, gstunek, na której półce się znajduje
     Ksiazka* ksiazka = new Ksiazka("W pustyni i w puszczy", "Henryk Sienkiewicz", 1, "Przygodowa", 5);
     Czasopismo* czasopismo = new Czasopismo("National Geographic", "John Doe", 2, "Przyroda", 7);
