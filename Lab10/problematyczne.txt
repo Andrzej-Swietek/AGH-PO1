@@ -1,0 +1,2 @@
+- Te ze sprawdzaniem nazw klas i jak klasa X to zrob cos innego niz klasa Y - it to połaczone z wielokrotnym dziedziczeniem 
+- 
