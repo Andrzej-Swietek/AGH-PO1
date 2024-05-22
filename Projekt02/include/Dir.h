@@ -25,7 +25,9 @@ public:
 
     std::string getName() const override { return name; }
     bool isDir() const override { return true; }
-    void add(FSElement* elem) { elements.push_back(elem); }
+    void add(FSElement* element) {
+        elements.push_back(element);
+    }
 
     Dir* findDir(const std::string& name) {
         for (FSElement* elem : elements) {

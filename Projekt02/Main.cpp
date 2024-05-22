@@ -1,6 +1,18 @@
+// Celem zadania jest systemu zarządzania systemem plików.
+// Skladnikami tymi sa miedzy innymi katalog (klasa Dir) i plik (klasa File),
+// ale z możliwością rozszerzenia implementacji o kolejne typy, np. Link
+// W tym zadaniu należy zaimplementowac metodę listDirs, której argumentem jest głębokość
+// w drzewie katalogu, do której chcemy listować katalogi, ale z założeniem że
+// metoda listDirs korzysta z metody FSElement::getFSElemets, które zwraca również liste
+// katalogow / plikow / itp do danego poziomu zagnieżdzenia.
+// Metoda ta przyjmuje również określenie typu, np. Type::Dir, Type::File
+// Dodatkowym założeniem jest kopiowanie katalagu z całą jego "zawartością".
+// UWAGA: FSElement to klasa bazowa.
+// UWAGA: Haczyk w zadaniu to ryzyko ewentualnego "circular dependency".
 //
-// Created by andrzej on 18.05.24.
-//
+// Ostateczny program powinien byc przyjazny dla programisty (miec czytelny i dobrze napisany kod),
+// oraz powinna być spełniona zasada D.R.Y. - Don't Repeat Yourself.
+
 #include <iostream>
 #include <vector>
 #include <string>
