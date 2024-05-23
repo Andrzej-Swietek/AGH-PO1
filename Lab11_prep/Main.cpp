@@ -80,6 +80,10 @@ int main() {
       std::cout << elem->GetName() << " (" << (dynamic_cast<Dir*>(elem) ? "DIR" : "FILE") << ")" << std::endl;
   }
 
+//  bool xxx = ewa->HasAccessForFile("pict.jpg");
+//  if (xxx)
+//    std::cout << xxx << "IS TRUE" << std::endl;
+
   delete top;
   delete ewa;
   delete adam;

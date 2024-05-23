@@ -30,6 +30,12 @@ public:
     */
     Dir* GetHomedir() const;
 
+    /**
+     * @brief Method Check if users home directory includes given file
+     * @param[in] file_name - name of searched file
+     * @return true if file is in some subdirectory, false if not
+     */
+    bool HasAccessForFile(std::string file_name) const;
 
 private:
    /**

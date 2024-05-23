@@ -18,6 +18,12 @@ public:
      * @param[in] level - Search Depth
      * @param[in] type - Searched Type : File/Dir
      * @param[in,out] elements - vector into which search results shall be saved
+     * @example
+     * ```cpp
+     * // DIRECTORY CLASS
+     * std::vector<FSElement*> elements_result;
+     * FSElement::getFSElements(_subdirs, lvl, Type::DIR, elements_result);
+     * ```
      * @return no return
     */
     void getFSElements(const std::vector<FSElement*> &sub, int level, Type type, std::vector<FSElement*> &elements) const;
