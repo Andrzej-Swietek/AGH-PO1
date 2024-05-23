@@ -31,27 +31,46 @@ void Dir::operator+=(FSElement *element)
 bool Dir::isDir() const
 { return true; }
 
+//Dir* Dir::findDir(std::string name) const
+//{
+//    for (FSElement* el : _subdirs)
+//    {
+//        if (el->isDir())
+//        {
+//            if(el->GetName() == name)
+//            {
+//                return static_cast<Dir*>(el);
+//            }
+//            else
+//            {
+//                for (FSElement* el2 : static_cast<Dir*>(el)->GetSubdirs())
+//                {
+//                    if (el2->isDir() && el2->GetName() == name)
+//                    {
+//                        return static_cast<Dir*>(el2);
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    return nullptr;
+//}
+
 Dir* Dir::findDir(std::string name) const
 {
     for (FSElement* el : _subdirs)
     {
         if (el->isDir())
         {
-            if(el->GetName() == name)
+            Dir* dir = static_cast<Dir*>(el);
+            if (dir->GetName() == name)
             {
-                return static_cast<Dir*>(el);
+                return dir;
             }
-            else 
+            Dir* found = dir->findDir(name);
+            if (found)
             {
-                for (FSElement* el2 : static_cast<Dir*>(el)->GetSubdirs())
-                {
-                    if (el2->isDir() && el2->GetName() == name)
-                    {
-                        return static_cast<Dir*>(el2);
-                    }
-                    // rekurencja?
-                    // static_cast<Dir*>(el)->findDir(name);
-                }            
+                return found;
             }
         }
     }
