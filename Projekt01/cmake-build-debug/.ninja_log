@@ -1,9 +1,0 @@
-# ninja log v5
-476	522	1712085092495617870	Point	ba91e34482c7ce0f
-1	217	1712078867965342653	CMakeFiles/Point.dir/src/Ksiazka.cpp.o	e02595f842902d9
-1	476	1712085092451618030	CMakeFiles/Point.dir/src/Library.cpp.o	4af99f421eaa5f0f
-0	258	1712085092231618834	CMakeFiles/Point.dir/main.cpp.o	ab9a93af3da62774
-1	310	1712078868061342504	CMakeFiles/Point.dir/src/Komiks.cpp.o	f5aaa0844e9199a8
-0	238	1712078994921142346	CMakeFiles/Point.dir/src/User.cpp.o	acb0605013200fbd
-1	258	1712078868009342584	CMakeFiles/Point.dir/src/IKsiazka.cpp.o	eadd153adee6310
-1	247	1712078867997342603	CMakeFiles/Point.dir/src/Czasopismo.cpp.o	cb706a46f978e0be
