@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 class Complex {
 public:
@@ -24,4 +25,11 @@ public:
         out << "(" << c.real << ", " << c.imag << "i)";
         return out;
     }
+
+    operator double() const;
 };
+
+
+Complex::operator double() const {
+    return std::sqrt(real * real + imag * imag);
+}
