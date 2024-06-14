@@ -1,0 +1,3 @@
+/home/andrzej/Documents/AGH-PO1/Projekt01/cmake-build-debug/CMakeFiles/Point.dir
+/home/andrzej/Documents/AGH-PO1/Projekt01/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andrzej/Documents/AGH-PO1/Projekt01/cmake-build-debug/CMakeFiles/rebuild_cache.dir
