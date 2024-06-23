@@ -22,41 +22,31 @@ using Float_t = Type_t<>; // type_t opakowywacz dowolnego typu
 
 
 template<typename T>
-struct ptr {
-
-    using value_type = T;
-
+struct ptr
+{
     ptr() = default;
-    explicit ptr(T* value) {
-        _pointer = value;
+    using value_type = T;
+    ptr(const ptr& o) = delete;            // Usunięty konstruktor kopiujący
+    ptr& operator=(const ptr& o) = delete; // Usunięty operator przypisania kopiującego
+    ptr& operator=(ptr&& o) = delete;      // Usunięty operator przypisania przenoszącego
+    explicit ptr(T* obj) : _p(obj) {}      // konwertujacy
+    ptr(ptr&& o)
+    {
+        _p = o._p;
+        o._p = nullptr;
     }
 
-    // semantyka kopiowania zablokowana
-    ptr(const T& obj) = delete;
-    ptr& operator=(const T& obj) = delete;
-
-    // semantyka przenoszenia ok
-    ptr(T&& obj) {
-        _pointer = obj._pointer;
-        obj._pointer = nullptr;
-    };
-
-//    ptr& operator=(T&& obj) {
-//        _pointer = obj._pointer;
-//        obj._pointer = nullptr;
-//    };
-    ptr& operator=(T&& obj) = delete;
-
-    // operator *
-    T& operator*() const {
-        return *_pointer;
+    T& operator*() const
+    {
+        return *_p;
+    }
+    T* operator->() const
+    {
+        return _p;
     }
 
-    T* operator->() const{
-        return _pointer;
-    }
-
-    T* _pointer;
+private:
+    T* _p;
 };
 
 
