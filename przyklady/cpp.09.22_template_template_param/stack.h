@@ -1,7 +1,8 @@
 #pragma once 
 #include <memory>
 
-template <typename T, typename Cont> class stack
+template <typename T, typename Cont>
+class stack
 {
 public:
   void pop()
